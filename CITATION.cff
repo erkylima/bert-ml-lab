@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "BERT Machine Learning Laboratory: Portuguese Language Processing Experiments"
+version: 1.0.0
+date-released: 2026-02-14
+license: MIT
+authors:
+  - given-names: Erky
+    family-names: Lima
+    email: contato@erky.com.br
+    orcid: 0009-0007-0280-6357
+repository-code: "https://github.com/erkylima/bert-ml-lab"
+abstract: |
+  This repository contains a comprehensive machine learning laboratory for Portuguese language processing experiments using BERT models. The project includes implementations of BERTimbau fine-tuning, sentiment analysis, and neural RAG systems, all designed for scientific reproducibility and publication readiness.
+  
+  Key features:
+  - Complete Docker-based environment with GPU support
+  - Reproducible experiments with fixed random seeds
+  - Pre-trained model checkpoints for Portuguese BERT
+  - Comprehensive documentation for scientific publication
+  - Modular structure for easy extension
+  
+  The laboratory enables researchers to:
+  1. Reproduce Portuguese NLP experiments
+  2. Fine-tune BERT models on custom datasets
+  3. Conduct sentiment analysis in Portuguese
+  4. Implement retrieval-augmented generation systems
+keywords:
+  - "natural language processing"
+  - "portuguese language"
+  - "bert"
+  - "machine learning"
+  - "reproducible research"
+  - "sentiment analysis"
+  - "transfer learning"
+  - "lora"
+  - "fine-tuning"
+  - "scientific experiments"
+preferred-citation:
+  type: software
+  title: "BERT Machine Learning Laboratory"
+  authors:
+    - given-names: Erky
+      family-names: Lima
+  year: 2026
+  version: 1.0.0
+  url: "https://github.com/erkylima/bert-ml-lab"

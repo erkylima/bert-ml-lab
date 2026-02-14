@@ -1,0 +1,40 @@
+services:
+  bert-lab:
+    container_name: bert-ml-lab
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${JUPYTER_PORT:-8888}:8888"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    volumes:
+      - ./notebooks:/workspace/notebooks
+      - ./data:/workspace/data
+      - ./models:/workspace/models
+      - ./results:/workspace/results
+      - ./scripts:/workspace/scripts
+      - ./docs:/workspace/docs
+      - ./config:/workspace/config
+      - ./cache:/workspace/.cache
+    environment:
+      - JUPYTER_TOKEN=${JUPYTER_TOKEN:-sha1:VLWq5gkwf1an:4f3377bb5da7e3a3b9f688139c1ffb04d51949eb}
+      - HF_TOKEN=${HF_TOKEN:-}
+      - HF_CACHE_DIR=${HF_CACHE_DIR:-/workspace/.cache}
+      - BERTIMBAU_MODEL=${BERTIMBAU_MODEL:-neuralmind/bert-base-portuguese-cased}
+      - SEED=${SEED:-42}
+      - NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES:-all}
+      - NVIDIA_DRIVER_CAPABILITIES=${NVIDIA_DRIVER_CAPABILITIES:-compute,utility}
+    restart: unless-stopped
+    shm_size: ${DOCKER_SHARED_MEMORY:-16gb}
+    networks:
+      - ml-lab-network
+
+networks:
+  ml-lab-network:
+    driver: bridge

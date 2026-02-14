@@ -1,0 +1,135 @@
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Ambientes Virtuais e Bibliotecas
+venv/
+env/
+ENV/
+.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Arquivos de sistema (macOS)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs e dados temporários
+*.log
+*.sql
+*.sqlite
+*.db
+
+# Pastas de dados e cache
+data/
+cache/
+models/
+results/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.h5
+*.hdf5
+*.ckpt
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+
+# Configurações do VS Code
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Pastas de lixo do sistema (Jupyter/Docker)
+.Trash-*/
+*/.Trash-*
+
+# Datasets grandes
+notebooks/imagens/data/
+notebooks/livro/results_*/
+notebooks/sentimentos/results_*/
+notebooks/sentimentos/bert-imdb-light-model/
+notebooks/livro/results_bertimbau_ft/
+notebooks/livro/results_mistral_book/
+
+# Arquivos de texto grandes
+*.txt
+*.csv
+*.tsv
+*.jsonl
+*.parquet
+*.feather
+
+# Arquivos de configuração do Jupyter
+config/lab/
+config/migrated
+
+# Arquivos de ambiente
+environment.yml
+requirements.txt
+*.lock
+
+# Arquivos de script temporários
+i.sh
+image.png
+
+# Arquivos de especificação Kiro
+.kiro/
+specs/
+
+# Arquivos de Docker
+*.tar
+*.tar.gz
+*.tgz
+
+# Arquivos de Hugging Face
+*.safetensors.index.json
+*.safetensors.index.json.*
+*.safetensors.index.json.*.tmp
+
+# Arquivos de treinamento
+checkpoint-*/
+training_args.bin
+trainer_state.json
+optimizer.pt
+scheduler.pt
+scaler.pt
+rng_state.pth
+
+# Tokenizers e vocabulários
+vocab.txt
+vocab.json
+merges.txt
+tokenizer.json
+tokenizer_config.json
+special_tokens_map.json
+
+# Configurações de modelo
+config.json
+adapter_config.json
+model.safetensors
+adapter_model.safetensors
+
+# Notebooks (opcional - mantenha se quiser versionar)
+# *.ipynb
+
+# Exceções (mantenha READMEs e documentação)
+!README.md
+!*.md
+!LICENSE
+!CITATION.cff
+!QUICKSTART.md
+!PROJECT_SUMMARY.md

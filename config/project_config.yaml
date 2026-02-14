@@ -1,0 +1,71 @@
+# BERT ML Laboratory - Project Configuration
+# This file contains all project-level configuration
+
+project:
+  name: "BERT Machine Learning Laboratory"
+  version: "1.0.0"
+  description: "Scientific experiments with Portuguese BERT models"
+  author: "Érky Lima"
+  email: "contato@erky.com.br
+  license: "MIT"
+  repository: "https://github.com/erkylima/bert-ml-lab"
+
+experiments:
+  bertimbau_finetuning:
+    name: "BERTimbau Fine-tuning on Portuguese Text"
+    objective: "Fine-tune BERTimbau for Portuguese language understanding"
+    model: "neuralmind/bert-base-portuguese-cased"
+    dataset: "Portuguese biblical text"
+    techniques: ["Masked Language Modeling", "LoRA", "Gradient Accumulation"]
+    metrics: ["perplexity", "accuracy", "f1_score"]
+    
+  sentiment_analysis:
+    name: "Portuguese Sentiment Analysis"
+    objective: "Build sentiment classifier for Portuguese text"
+    model: "bert-base-uncased"
+    dataset: "Custom sentiment dataset"
+    techniques: ["Sequence Classification", "Transfer Learning"]
+    metrics: ["accuracy", "precision", "recall", "f1_score"]
+    
+  neural_rag:
+    name: "Neural RAG for Portuguese"
+    objective: "Implement Retrieval-Augmented Generation system"
+    model: "sentence-transformers + mistral"
+    dataset: "Portuguese documents"
+    techniques: ["Embedding", "Retrieval", "Generation"]
+    metrics: ["retrieval_accuracy", "generation_quality"]
+
+environment:
+  python: "3.12"
+  pytorch: "2.9.1"
+  cuda: "12.4"
+  transformers: "latest"
+  datasets: "latest"
+  accelerate: "latest"
+  peft: "latest"
+
+paths:
+  data_raw: "/workspace/data/raw"
+  data_processed: "/workspace/data/processed"
+  data_external: "/workspace/data/external"
+  models: "/workspace/models"
+  checkpoints: "/workspace/models/checkpoints"
+  results: "/workspace/results"
+  metrics: "/workspace/results/metrics"
+  visualizations: "/workspace/results/visualizations"
+  logs: "/workspace/results/logs"
+
+training:
+  default_batch_size: 8
+  default_learning_rate: 2e-5
+  default_epochs: 3
+  default_warmup_steps: 500
+  default_max_length: 512
+  default_seed: 42
+  
+reproducibility:
+  fixed_seeds: true
+  deterministic: true
+  environment_lock: true
+  data_versioning: true
+  model_versioning: true
