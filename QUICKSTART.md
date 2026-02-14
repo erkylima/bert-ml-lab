@@ -1,206 +1,206 @@
-# BERT ML Laboratory - Quick Start Guide
+# Laboratório BERT ML - Guia de Início Rápido
 
-## 🚀 Get Started in 5 Minutes
+## 🚀 Comece em 5 Minutos
 
-### 1. Clone and Setup
+### 1. Clone e Configuração
 ```bash
-# Clone the repository
+# Clone o repositório
 git clone https://github.com/erkylima/bert-ml-lab.git
 cd bert-ml-lab
 
-# Run the setup script
+# Execute o script de setup
 ./scripts/setup_project.sh
 ```
 
-### 2. Access the Laboratory
+### 2. Acesse o Laboratório
 - **URL**: http://localhost:8888
-- **Password**: `minhasenha`
-- **Username**: No username required
+- **Senha**: `minhasenha`
+- **Usuário**: Não requer nome de usuário
 
-### 3. Run Your First Experiment
-1. Open Jupyter Lab in your browser
-2. Navigate to `notebooks/livro/bertimbau.ipynb`
-3. Run all cells (Kernel → Restart & Run All)
+### 3. Execute Seu Primeiro Experimento
+1. Abra o Jupyter Lab no seu navegador
+2. Navegue até `notebooks/livro/bertimbau.ipynb`
+3. Execute todas as células (Kernel → Restart & Run All)
 
-## 📋 What's Included
+## 📋 O Que Está Incluído
 
-### Pre-configured Environment
-- ✅ Python 3.12 with scientific packages
-- ✅ PyTorch 2.9.1 with CUDA 12.4 support
-- ✅ Hugging Face Transformers library
-- ✅ Jupyter Lab with dark theme
-- ✅ GPU acceleration ready
+### Ambiente Pré-configurado
+- ✅ Python 3.12 com pacotes científicos
+- ✅ PyTorch 2.9.1 com suporte a CUDA 12.4
+- ✅ Biblioteca Hugging Face Transformers
+- ✅ Jupyter Lab com tema escuro
+- ✅ Aceleração GPU pronta
 
-### Ready-to-Run Experiments
-1. **BERTimbau Fine-tuning** (`notebooks/livro/`)
-   - Portuguese BERT model
-   - Biblical text dataset
-   - LoRA fine-tuning
+### Experimentos Prontos para Executar
+1. **Fine-tuning do BERTimbau** (`notebooks/livro/`)
+   - Modelo BERT em português
+   - Dataset de texto bíblico
+   - Fine-tuning LoRA
 
-2. **Sentiment Analysis** (`notebooks/sentimentos/`)
-   - Portuguese sentiment classification
-   - Pre-trained model checkpoints
-   - Evaluation metrics
+2. **Análise de Sentimentos** (`notebooks/sentimentos/`)
+   - Classificação de sentimentos em português
+   - Checkpoints de modelo pré-treinado
+   - Métricas de avaliação
 
-3. **Neural RAG System** (`notebooks/neuralRag/`)
+3. **Sistema Neural RAG** (`notebooks/neuralRag/`)
    - Retrieval-Augmented Generation
-   - Portuguese question answering
-   - Embedding and retrieval
+   - Question answering em português
+   - Embeddings e recuperação
 
-## 🎯 For Researchers
+## 🎯 Para Pesquisadores
 
-### Reproduce Published Results
+### Reproduza Resultados Publicados
 ```bash
-# Run reproduction script
+# Execute o script de reprodução
 python scripts/reproduce_experiments.py --experiment all
 
-# Generate publication-ready figures
+# Gere figuras prontas para publicação
 python scripts/generate_figures.py
 ```
 
-### Start New Experiment
-1. Copy template notebook: `templates/experiment_template.ipynb`
-2. Update configuration in `config/experiment_config.yaml`
-3. Run with: `python scripts/run_experiment.py --config your_config.yaml`
+### Inicie Novo Experimento
+1. Copie o template de notebook: `templates/experiment_template.ipynb`
+2. Atualize a configuração em `config/experiment_config.yaml`
+3. Execute com: `python scripts/run_experiment.py --config your_config.yaml`
 
-## 🛠️ Common Tasks
+## 🛠️ Tarefas Comuns
 
-### Check System Status
+### Verifique o Status do Sistema
 ```bash
-# Check Docker containers
+# Verifique containers Docker
 docker-compose ps
 
-# View logs
+# Visualize logs
 docker-compose logs -f
 
-# Check GPU availability
+# Verifique disponibilidade GPU
 docker-compose exec bert-ml-lab nvidia-smi
 ```
 
-### Manage Data
+### Gerencie Dados
 ```bash
-# Add new dataset
+# Adicione novo dataset
 cp your_data.csv data/raw/
 python scripts/preprocess_data.py --input data/raw/your_data.csv
 
-# Download external dataset
+# Baixe dataset externo
 python scripts/download_dataset.py --name portuguese_wikipedia
 ```
 
-### Export Results
+### Exporte Resultados
 ```bash
-# Export experiment results
+# Exporte resultados de experimentos
 python scripts/export_results.py --format latex
 
-# Generate model cards
+# Gere model cards
 python scripts/generate_model_card.py --model models/checkpoints/bertimbau_ft
 ```
 
-## 🔧 Troubleshooting
+## 🔧 Solução de Problemas
 
-### Common Issues
+### Problemas Comuns
 
-#### 1. Docker Build Fails
+#### 1. Build do Docker Falha
 ```bash
-# Clean build
+# Build limpo
 docker-compose down
 docker-compose build --no-cache
 ```
 
-#### 2. GPU Not Detected
+#### 2. GPU Não Detectada
 ```bash
-# Check NVIDIA Docker
+# Verifique NVIDIA Docker
 docker run --rm --gpus all nvidia/cuda:12.4.1-base-ubuntu22.04 nvidia-smi
 
-# Update Docker Compose
+# Atualize Docker Compose
 docker-compose down
 export NVIDIA_VISIBLE_DEVICES=all
 docker-compose up -d
 ```
 
-#### 3. Memory Issues
+#### 3. Problemas de Memória
 ```bash
-# Increase shared memory
+# Aumente memória compartilhada
 export DOCKER_SHARED_MEMORY=32gb
 docker-compose down && docker-compose up -d
 
-# Reduce batch size
+# Reduza batch size
 export TRAIN_BATCH_SIZE=4
 ```
 
-## 📊 Monitoring
+## 📊 Monitoramento
 
-### Resource Usage
+### Uso de Recursos
 ```bash
-# Monitor GPU usage
+# Monitore uso de GPU
 watch -n 1 nvidia-smi
 
-# Monitor memory
+# Monitore memória
 docker stats bert-ml-lab
 
-# Check disk space
+# Verifique espaço em disco
 df -h /workspace
 ```
 
-### Experiment Tracking
-- **TensorBoard**: http://localhost:6006 (if enabled)
-- **MLflow**: http://localhost:5000 (if enabled)
+### Tracking de Experimentos
+- **TensorBoard**: http://localhost:6006 (se habilitado)
+- **MLflow**: http://localhost:5000 (se habilitado)
 - **Logs**: `results/logs/`
 
-## 🎓 Learning Resources
+## 🎓 Recursos de Aprendizado
 
-### Tutorial Notebooks
-1. `tutorials/01_bert_basics.ipynb` - BERT fundamentals
+### Notebooks Tutoriais
+1. `tutorials/01_bert_basics.ipynb` - Fundamentos do BERT
 2. `tutorials/02_fine_tuning.ipynb` - Transfer learning
-3. `tutorials/03_evaluation.ipynb` - Model evaluation
-4. `tutorials/04_publication.ipynb` - Scientific writing
+3. `tutorials/03_evaluation.ipynb` - Avaliação de modelos
+4. `tutorials/04_publication.ipynb` - Escrita científica
 
-### Documentation
-- Full documentation: `docs/`
-- API reference: `docs/api/`
-- Experiment catalog: `docs/experiment_catalog.md`
-- Publication guide: `docs/publication_guide.md`
+### Documentação
+- Documentação completa: `docs/`
+- Referência de API: `docs/api/`
+- Catálogo de experimentos: `docs/experiment_catalog.md`
+- Guia de publicação: `docs/publication_guide.md`
 
-## 🤝 Getting Help
+## 🤝 Obtendo Ajuda
 
-### Community Support
-- **GitHub Issues**: Bug reports and feature requests
-- **Discussions**: Questions and community help
-- **Wiki**: Detailed documentation and tutorials
+### Suporte da Comunidade
+- **GitHub Issues**: Relatórios de bugs e solicitações de features
+- **Discussions**: Perguntas e ajuda da comunidade
+- **Wiki**: Documentação detalhada e tutoriais
 
-### Contact Maintainer
+### Contate o Mantenedor
 - **Email**: contato@erky.com.br
 - **GitHub**: @erkylima
 
-## 📈 Next Steps
+## 📈 Próximos Passos
 
-### For Beginners
-1. Complete tutorial notebooks
-2. Run example experiments
-3. Modify hyperparameters
-4. Add your own dataset
+### Para Iniciantes
+1. Complete os notebooks tutoriais
+2. Execute experimentos de exemplo
+3. Modifique hiperparâmetros
+4. Adicione seu próprio dataset
 
-### For Advanced Users
-1. Implement new model architectures
-2. Add custom evaluation metrics
-3. Create publication-ready visualizations
-4. Contribute to the codebase
+### Para Usuários Avançados
+1. Implemente novas arquiteturas de modelo
+2. Adicione métricas de avaliação customizadas
+3. Crie visualizações prontas para publicação
+4. Contribua para a base de código
 
-### For Publication
-1. Document your methodology
-2. Generate reproducible results
-3. Prepare supplementary materials
-4. Follow publication guide
+### Para Publicação
+1. Documente sua metodologia
+2. Gere resultados reproduzíveis
+3. Prepare materiais suplementares
+4. Siga o guia de publicação
 
 ---
 
-**Happy Experimenting!** 🧪🔬
+**Bons Experimentos!** 🧪🔬
 
-Remember to cite this work if you use it in your research:
+Lembre-se de citar este trabalho se usá-lo em sua pesquisa:
 ```bibtex
 @software{bert_ml_lab_2026,
   author = {Erky Lima},
-  title = {BERT Machine Learning Laboratory},
+  title = {Laboratório de Machine Learning BERT},
   year = {2026},
   url = {https://github.com/erkylima/bert-ml-lab}
 }

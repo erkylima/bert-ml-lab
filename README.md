@@ -1,152 +1,152 @@
-# BERT Machine Learning Laboratory - Scientific Experiment Publication
+# Laboratório de Machine Learning BERT - Publicação de Experimentos Científicos
 
-## 📋 Overview
+## 📋 Visão Geral
 
-This repository contains a comprehensive machine learning laboratory focused on Portuguese language processing using BERT models. The project includes experiments with BERTimbau (Portuguese BERT), sentiment analysis, text classification, and fine-tuning techniques.
+Este repositório contém um laboratório abrangente de machine learning focado no processamento de linguagem natural em português usando modelos BERT. O projeto inclui experimentos com BERTimbau (BERT em português), análise de sentimentos, classificação de texto e técnicas de fine-tuning.
 
-## 🎯 Research Objectives
+## 🎯 Objetivos de Pesquisa
 
-1. **Portuguese Language Modeling**: Fine-tuning BERTimbau for Portuguese text understanding
-2. **Sentiment Analysis**: Building sentiment classifiers for Portuguese text
-3. **Transfer Learning**: Exploring LoRA (Low-Rank Adaptation) for efficient fine-tuning
-4. **Reproducible Research**: Creating a fully reproducible ML experimentation environment
+1. **Modelagem de Linguagem em Português**: Fine-tuning do BERTimbau para compreensão de texto em português
+2. **Análise de Sentimentos**: Construção de classificadores de sentimentos para texto em português
+3. **Transfer Learning**: Exploração de LoRA (Low-Rank Adaptation) para fine-tuning eficiente
+4. **Pesquisa Reproduzível**: Criação de um ambiente de experimentação ML totalmente reproduzível
 
-## 🏗️ Project Structure
+## 🏗️ Estrutura do Projeto
 
 ```
 bert-ml-lab/
-├── notebooks/              # Jupyter notebooks with experiments
-│   ├── livro/             # BERTimbau fine-tuning experiments
-│   ├── sentimentos/       # Sentiment analysis experiments  
-│   ├── neuralRag/         # Neural RAG experiments
-│   └── imagens/          # Computer vision experiments
-├── data/                  # Datasets and processed data
-├── models/               # Trained model checkpoints
-├── scripts/              # Utility scripts and pipelines
-├── config/               # Configuration files
-├── docs/                 # Documentation and research notes
-└── results/              # Experiment results and metrics
+├── notebooks/              # Notebooks Jupyter com experimentos
+│   ├── livro/             # Experimentos de fine-tuning do BERTimbau
+│   ├── sentimentos/       # Experimentos de análise de sentimentos  
+│   ├── neuralRag/         # Experimentos de RAG Neural
+│   └── imagens/          # Experimentos de visão computacional
+├── data/                  # Datasets e dados processados
+├── models/               # Checkpoints de modelos treinados
+├── scripts/              # Scripts utilitários e pipelines
+├── config/               # Arquivos de configuração
+├── docs/                 # Documentação e notas de pesquisa
+└── results/              # Resultados de experimentos e métricas
 ```
 
-## 🚀 Quick Start
+## 🚀 Início Rápido
 
-### Prerequisites
-- Docker and Docker Compose
-- NVIDIA GPU with CUDA support (recommended)
-- 16GB+ RAM
+### Pré-requisitos
+- Docker e Docker Compose
+- GPU NVIDIA com suporte a CUDA (recomendado)
+- 16GB+ de RAM
 
-### Running the Laboratory
+### Executando o Laboratório
 
-1. **Clone the repository**:
+1. **Clone o repositório**:
    ```bash
    git clone https://github.com/erkylima/bert-ml-lab.git
    cd bert-ml-lab
    ```
 
-2. **Configure environment**:
+2. **Configure o ambiente**:
    ```bash
    cp .env.example .env
-   # Edit .env with your settings
+   # Edite .env com suas configurações
    ```
 
-3. **Start the Jupyter Lab environment**:
+3. **Inicie o ambiente Jupyter Lab**:
    ```bash
    docker-compose up -d
    ```
 
-4. **Access Jupyter Lab**:
-   - Open browser to: `http://localhost:8888`
-   - Password: `minhasenha` (as configured in .env)
+4. **Acesse o Jupyter Lab**:
+   - Abra o navegador em: `http://localhost:8888`
+   - Senha: `minhasenha` (conforme configurado no .env)
 
-## 🔬 Key Experiments
+## 🔬 Experimentos Principais
 
-### 1. BERTimbau Fine-tuning (`notebooks/livro/`)
-- **Objective**: Fine-tune BERTimbau on Portuguese biblical text
-- **Techniques**: Masked Language Modeling (MLM), LoRA adaptation
-- **Models**: `neuralmind/bert-base-portuguese-cased`
-- **Results**: Multiple checkpoints with different training steps
+### 1. Fine-tuning do BERTimbau (`notebooks/livro/`)
+- **Objetivo**: Fine-tuning do BERTimbau em texto bíblico em português
+- **Técnicas**: Masked Language Modeling (MLM), adaptação LoRA
+- **Modelos**: `neuralmind/bert-base-portuguese-cased`
+- **Resultados**: Múltiplos checkpoints com diferentes passos de treinamento
 
-### 2. Sentiment Analysis (`notebooks/sentimentos/`)
-- **Objective**: Build sentiment classifier for Portuguese text
-- **Dataset**: Custom sentiment dataset
-- **Model**: BERT-based sequence classification
-- **Metrics**: Accuracy, F1-score, precision, recall
+### 2. Análise de Sentimentos (`notebooks/sentimentos/`)
+- **Objetivo**: Construir classificador de sentimentos para texto em português
+- **Dataset**: Dataset de sentimentos customizado
+- **Modelo**: Classificação de sequência baseada em BERT
+- **Métricas**: Acurácia, F1-score, precisão, recall
 
-### 3. Neural RAG System (`notebooks/neuralRag/`)
-- **Objective**: Implement Retrieval-Augmented Generation for Portuguese
-- **Components**: Embedding generation, retrieval, generation
-- **Applications**: Question answering, document understanding
+### 3. Sistema Neural RAG (`notebooks/neuralRag/`)
+- **Objetivo**: Implementar Retrieval-Augmented Generation para português
+- **Componentes**: Geração de embeddings, recuperação, geração
+- **Aplicações**: Question answering, compreensão de documentos
 
-## 📊 Results Summary
+## 📊 Resumo de Resultados
 
-### BERTimbau Fine-tuning Results
-- **Base Model**: BERTimbau (Portuguese BERT)
-- **Training Data**: Portuguese biblical text (1.2M tokens)
-- **Checkpoints**: 15 checkpoints from 15 to 3104 steps
-- **Evaluation**: Perplexity reduction of 35% on validation set
+### Resultados do Fine-tuning do BERTimbau
+- **Modelo Base**: BERTimbau (BERT em português)
+- **Dados de Treinamento**: Texto bíblico em português (1.2M tokens)
+- **Checkpoints**: 15 checkpoints de 15 a 3104 passos
+- **Avaliação**: Redução de 35% na perplexidade no conjunto de validação
 
-### Sentiment Analysis Performance
-- **Model**: BERT-base fine-tuned on sentiment dataset
-- **Accuracy**: 89.2% on test set
-- **F1-score**: 0.88 (macro average)
-- **Dataset Size**: 10,000 labeled examples
+### Performance da Análise de Sentimentos
+- **Modelo**: BERT-base fine-tuned em dataset de sentimentos
+- **Acurácia**: 89.2% no conjunto de teste
+- **F1-score**: 0.88 (média macro)
+- **Tamanho do Dataset**: 10,000 exemplos rotulados
 
-## 🛠️ Technical Implementation
+## 🛠️ Implementação Técnica
 
-### Environment
+### Ambiente
 - **Python**: 3.12
-- **PyTorch**: 2.9.1 with CUDA 12.4
-- **Transformers**: Hugging Face library
-- **Accelerate**: Distributed training utilities
+- **PyTorch**: 2.9.1 com CUDA 12.4
+- **Transformers**: Biblioteca Hugging Face
+- **Accelerate**: Utilitários de treinamento distribuído
 - **PEFT**: Parameter-Efficient Fine-Tuning (LoRA)
 
-### Hardware Requirements
-- **GPU**: NVIDIA RTX 3060 Ti (8GB VRAM) or equivalent
-- **RAM**: 16GB minimum, 32GB recommended
-- **Storage**: 50GB for models and datasets
+### Requisitos de Hardware
+- **GPU**: NVIDIA RTX 3060 Ti (8GB VRAM) ou equivalente
+- **RAM**: 16GB mínimo, 32GB recomendado
+- **Armazenamento**: 50GB para modelos e datasets
 
-## 📈 Reproducibility
+## 📈 Reprodutibilidade
 
-All experiments are fully reproducible:
+Todos os experimentos são totalmente reproduzíveis:
 
-1. **Environment**: Docker container with exact dependency versions
-2. **Seeds**: Fixed random seeds for deterministic results
-3. **Data**: Provided preprocessing scripts
-4. **Models**: Checkpoints available for download
-5. **Metrics**: Complete evaluation scripts
+1. **Ambiente**: Container Docker com versões exatas de dependências
+2. **Seeds**: Seeds aleatórios fixos para resultados determinísticos
+3. **Dados**: Scripts de pré-processamento fornecidos
+4. **Modelos**: Checkpoints disponíveis para download
+5. **Métricas**: Scripts de avaliação completos
 
-## 📚 Citation
+## 📚 Citação
 
-If you use this work in your research, please cite:
+Se você usar este trabalho em sua pesquisa, por favor cite:
 
 ```bibtex
 @software{bert_ml_lab_2026,
   author = {Erky Lima},
-  title = {BERT Machine Learning Laboratory: Portuguese Language Processing Experiments},
+  title = {Laboratório de Machine Learning BERT: Experimentos de Processamento de Linguagem em Português},
   year = {2026},
   url = {https://github.com/erkylima/bert-ml-lab},
   version = {1.0.0}
 }
 ```
 
-## 📄 License
+## 📄 Licença
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## 🤝 Contributing
+## 🤝 Contribuindo
 
-Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details.
+Contribuições são bem-vindas! Por favor leia nossas [Diretrizes de Contribuição](CONTRIBUTING.md) para detalhes.
 
-## 📧 Contact
+## 📧 Contato
 
-For questions about this research:
-- **Author**: Erky Lima
+Para perguntas sobre esta pesquisa:
+- **Autor**: Erky Lima
 - **Email**: contato@erky.com.br
 - **GitHub**: [@erkylima](https://github.com/erkylima)
 
-## 🙏 Acknowledgments
+## 🙏 Agradecimentos
 
-- [Hugging Face](https://huggingface.co) for the Transformers library
-- [NeuralMind](https://neuralmind.ai) for BERTimbau models
-- [NVIDIA](https://nvidia.com) for GPU acceleration support
-- The open-source ML community for tools and inspiration
+- [Hugging Face](https://huggingface.co) pela biblioteca Transformers
+- [NeuralMind](https://neuralmind.ai) pelos modelos BERTimbau
+- [NVIDIA](https://nvidia.com) pelo suporte à aceleração GPU
+- A comunidade open-source de ML por ferramentas e inspiração

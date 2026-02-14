@@ -65,13 +65,7 @@ notebooks/sentimentos/bert-imdb-light-model/
 notebooks/livro/results_bertimbau_ft/
 notebooks/livro/results_mistral_book/
 
-# Arquivos de texto grandes
-*.txt
-*.csv
-*.tsv
-*.jsonl
-*.parquet
-*.feather
+
 
 # Arquivos de configuração do Jupyter
 config/lab/

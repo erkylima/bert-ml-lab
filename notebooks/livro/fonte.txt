@@ -1,0 +1,3 @@
+biblia: https://www.gutenberg.org/cache/epub/62383/pg62383.txt
+
+atos: https://www.gutenberg.org/cache/epub/25667/pg25667.txt
