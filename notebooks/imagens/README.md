@@ -196,7 +196,7 @@ Para expandir experimentos de visão:
 ## 📧 Contato
 
 Para desenvolvimento em visão computacional:
-- **Autor**: Erky Lima
+- **Autor**: Erky Santos
 - **Email**: contato@erky.com.br
 - **Repositório**: https://github.com/erkylima/bert-ml-lab
 

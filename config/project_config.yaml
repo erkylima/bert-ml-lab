@@ -5,7 +5,7 @@ project:
   name: "BERT Machine Learning Laboratory"
   version: "1.0.0"
   description: "Scientific experiments with Portuguese BERT models"
-  author: "Érky Lima"
+  author: "Érky Santos"
   email: "contato@erky.com.br
   license: "MIT"
   repository: "https://github.com/erkylima/bert-ml-lab"

@@ -6,7 +6,7 @@ date-released: 2026-02-14
 license: MIT
 authors:
   - given-names: Erky
-    family-names: Lima
+    family-names: Santos
     email: contato@erky.com.br
     orcid: 0009-0007-0280-6357
 repository-code: "https://github.com/erkylima/bert-ml-lab"
@@ -41,7 +41,7 @@ preferred-citation:
   title: "BERT Machine Learning Laboratory"
   authors:
     - given-names: Erky
-      family-names: Lima
+      family-names: Santos
   year: 2026
   version: 1.0.0
   url: "https://github.com/erkylima/bert-ml-lab"

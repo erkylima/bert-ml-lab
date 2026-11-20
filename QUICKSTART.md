@@ -199,7 +199,7 @@ df -h /workspace
 Lembre-se de citar este trabalho se usá-lo em sua pesquisa:
 ```bibtex
 @software{bert_ml_lab_2026,
-  author = {Erky Lima},
+  author = {Erky Santos},
   title = {Laboratório de Machine Learning BERT},
   year = {2026},
   url = {https://github.com/erkylima/bert-ml-lab}

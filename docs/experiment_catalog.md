@@ -188,7 +188,7 @@ Each experiment generates:
 ## Citation Format
 ```bibtex
 @software{bert_ml_lab_2026,
-  author = {Erky Lima},
+  author = {Erky Santos},
   title = {BERT Machine Learning Laboratory: Portuguese Language Processing Experiments},
   year = {2026},
   url = {https://github.com/erkylima/bert-ml-lab},

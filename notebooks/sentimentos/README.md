@@ -190,7 +190,7 @@ Para adicionar novos experimentos:
 ## 📧 Contato
 
 Para questões técnicas:
-- **Autor**: Erky Lima
+- **Autor**: Erky Santos
 - **Email**: contato@erky.com.br
 - **Issues**: https://github.com/erkylima/bert-ml-lab/issues
 

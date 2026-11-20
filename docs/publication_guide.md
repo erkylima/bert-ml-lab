@@ -137,7 +137,7 @@ paper/
 ```bibtex
 @inproceedings{lima2026bertportuguese,
   title={BERT-based Transfer Learning for Portuguese Natural Language Processing},
-  author={Lima, Erky},
+  author={Santos, Erky},
   booktitle={Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},
   pages={1--10},
   year={2026}

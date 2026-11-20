@@ -190,7 +190,7 @@ Para expandir o sistema RAG:
 ## 📧 Contato
 
 Para desenvolvimento de sistemas RAG:
-- **Autor**: Erky Lima
+- **Autor**: Erky Santos
 - **Email**: contato@erky.com.br
 - **Repositório**: https://github.com/erkylima/bert-ml-lab
 
