@@ -29,6 +29,12 @@ Esta pasta contém todos os notebooks Jupyter do Laboratório BERT ML, organizad
 - **Técnicas**: Transfer learning, fusão imagem-texto
 - **Notebooks**: `Convolutional Neural Network.ipynb`
 
+### 5. `ncm/` - Next-Concept Modeling experimental
+- **Foco**: Fine-tuning do gerador NCM para código Python
+- **Aplicações**: Experimento de geração condicionada por problemas MBPP
+- **Técnicas**: Checkpoint XSum, VQ-VAE congelado, fine-tuning do gerador
+- **Notebooks**: `treino_ncm_codigo_python.ipynb`
+
 ## 🚀 Como Usar os Notebooks
 
 ### Ambiente Recomendado

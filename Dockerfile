@@ -43,7 +43,7 @@ RUN conda create -y -n bert python=3.12 && \
 RUN conda run -n bert pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124 
     
     # Instala bibliotecas de NLP
-RUN conda run -n bert pip install --no-cache-dir transformers datasets tqdm scikit-learn matplotlib accelerate evaluate peft && \
+RUN conda run -n bert pip install --no-cache-dir transformers datasets tqdm scikit-learn matplotlib accelerate evaluate peft omegaconf hydra-core "huggingface_hub[cli]" regex rouge_score sacrebleu && \
     conda clean -afy && \
     \
     # Registra o kernel no ambiente Jupyter
