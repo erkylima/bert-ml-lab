@@ -1,6 +1,6 @@
 # Jupyter Notebook Checkpoints
 .ipynb_checkpoints/
-
+.github/
 # Ambientes Virtuais e Bibliotecas
 venv/
 env/
