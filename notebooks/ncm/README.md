@@ -349,6 +349,54 @@ A métrica decisiva é combinação de:
 - qualidade qualitativa;
 - repetição.
 
+### Experimento completo em até 48 tokens
+
+Como o checkpoint XSum define um bloco nativo de 48 tokens GPT-2, foi criado
+um fluxo separado para funções completas que cabem nesse limite. O VQ-VAE de
+código da época 8 permaneceu congelado.
+
+O corpus primário consolidado foi montado com:
+
+- 426 exemplos completos já existentes, vindos de MBPP e CodeSearchNet;
+- 1.421 candidatos do APPS;
+- 1.584 candidatos do CodeContests.
+
+Após deduplicação por prompt e código, restaram 3.431 exemplos:
+
+```text
+treino:     3.087
+validacao:    171
+teste:        173
+```
+
+O Stage 2 desse corpus usou batch físico 2, acumulação 4, learning rate `1e-5`
+e chegou à época 11 antes da parada antecipada. A loss de validação caiu
+consistentemente de 2,2907 na época 8 para 2,0309 na época 11, mas a taxa de
+AST válido permaneceu em 0% na amostra de 20 exemplos de cada avaliação.
+
+Os candidatos gerados também ficaram repetidos: as amostras exibidas
+produziram os mesmos códigos NCM e o mesmo código Python inválido. Uma queda
+de loss, nesse experimento, não representou melhora observável de sintaxe ou
+aderência ao prompt.
+
+### Estado pausado
+
+Atualmente, o experimento está pausado e mantido sobre a mesa.
+
+Decisões atuais:
+
+- não treinar um novo VQ-VAE para blocos maiores na RTX 3060 Ti;
+- manter o VQ-VAE XSum/adaptado e seu bloco nativo de 48 tokens;
+- não retomar Stage 1 nem Stage 2 sem uma nova decisão explícita;
+- preservar os checkpoints existentes;
+- separar qualquer experimento futuro em corpus e diretório próprios;
+- não considerar mais dados, por si só, uma solução comprovada para geração.
+
+O limite de 48 tokens pertence ao checkpoint atual e à sua geometria
+hierárquica, não é uma limitação física da arquitetura NCM. Aumentá-lo exige
+um codec compatível e retreinamento; continuar com o checkpoint atual requer
+trabalhar em blocos ou em geração condicionada entre blocos.
+
 ### Forward
 
 Forward é quando os dados atravessam o modelo:
@@ -921,7 +969,13 @@ Os pesos Python podem ajudar como inicialização opcional, mas não devem ser m
 - o dataset PT-BR pode conter tradução artificial;
 - 300–500 milhões de tokens são apenas piloto;
 - gerar dados sintéticos pode ampliar erros;
-- modelos maiores não garantem qualidade.
+- modelos maiores não garantem qualidade;
+- o limite de 48 tokens é fixo no VQ-VAE XSum usado atualmente;
+- reutilizar blocos de 48 tokens para saídas maiores é experimental e pode
+  acumular erros entre blocos;
+- aumentar o corpus não garantiu AST válido no Stage 2;
+- queda de cross-entropy não implica correção sintática ou funcional;
+- o experimento foi pausado antes de validar uma melhora de geração.
 
 ---
 
@@ -929,7 +983,8 @@ Os pesos Python podem ajudar como inicialização opcional, mas não devem ser m
 
 ### Meta curta
 
-- finalizar o Stage 2 Python;
+- manter o estágio atual pausado e preservar os checkpoints;
+- registrar uma hipótese e um critério comparável antes de qualquer retomada;
 - medir validation loss;
 - medir AST válida;
 - medir execução MBPP;
